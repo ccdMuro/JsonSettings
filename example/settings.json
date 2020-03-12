@@ -1,4 +1,7 @@
 {
+	"openCount":32,
+	"state":"processed",
+	"thread_ID":84,
 	"user":{
 		"age":1337,
 		"name":"nobody"

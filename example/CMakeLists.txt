@@ -22,6 +22,10 @@ target_include_directories(jsonSettings PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/../src
 )
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(jsonSettings PRIVATE Threads::Threads)
+
 find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(JSONPP REQUIRED libjsonpp-0.1)

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <mutex>
 
 #include <JsonPP.h>
 
@@ -17,6 +18,7 @@ public:
 	
 private:
 	static std::string sm_settingsFilePath;
+	static std::mutex sm_fileAccessGuard;
 };
 
 }
