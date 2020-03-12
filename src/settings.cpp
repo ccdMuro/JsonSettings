@@ -1,5 +1,8 @@
 #include "settings.h"
 
+#include <fstream>
+#include <sstream>
+
 namespace Ccd
 {
 std::string Settings::sm_settingsFilePath {};
@@ -25,7 +28,7 @@ auto Settings::write(Ccd::Json::Object jsonObject) -> void
 	settingsFile << jsonObject;	
 }
 
-auto Settings::pathToFile(const std::string& filePath) -> void
+auto Settings::useThisFile(const std::string& filePath) -> void
 {
 	// sm_ static member
 	sm_settingsFilePath = filePath;	
