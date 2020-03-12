@@ -1,10 +1,7 @@
 #pragma once
 
-#include <fstream>
-#include <sstream>
-#include <iostream>
+#include <string>
 #include <mutex>
-
 #include <JsonPP.h>
 
 namespace Ccd {
@@ -12,7 +9,7 @@ namespace Ccd {
 class Settings
 {
 public:
-	auto pathToFile (const std::string& filePath) -> void;
+	auto useThisFile (const std::string& filePath) -> void;
 	auto read() -> Ccd::Json::Object;
 	auto write(Ccd::Json::Object jsonObject) -> void;
 	

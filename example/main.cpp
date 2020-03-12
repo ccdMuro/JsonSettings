@@ -20,7 +20,7 @@ int main (int argc, char** argv)
 		// set file to read and write 
 		// settings in JSON format
 		Ccd::Settings settings;
-		settings.pathToFile(SETTINGS_FILE);
+		settings.useThisFile("settings.json");
 		std::cout << "Using " << SETTINGS_FILE << "\n";
 	} // end of scope 'settings' object gets destroyed
 
@@ -37,9 +37,9 @@ int main (int argc, char** argv)
 
 		// add new key-value pair to settings
 		jOb["state"]= "processed";
-		std::cout << "add 'newEntry'\n";
+		std::cout << "add new entry 'state'\n";
 
-		// write changes to file
+		// write changes back to file
 		settings.write(jOb);
 		std::cout << "save the changes\n";
 	}
